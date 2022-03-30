@@ -2,6 +2,7 @@ use std::env;
 use serenity::async_trait;
 use serenity::client::{Client, Context, EventHandler};
 use serenity::model::channel::Message;
+use serenity::model::gateway::Ready;
 use serenity::framework::standard::{
     StandardFramework,
     CommandResult,
@@ -18,7 +19,12 @@ struct General;
 struct Handler;
 
 #[async_trait]
-impl EventHandler for Handler {}
+impl EventHandler for Handler {
+    
+    async fn ready(&self, _: Context, ready: Ready) {
+        println!("{:?} is connected!", ready.user.name);
+    }
+}
 
 #[tokio::main]
 async fn main() {
