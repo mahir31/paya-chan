@@ -1,14 +1,22 @@
 use std::env;
-use serenity::async_trait;
-use serenity::client::{Client, Context, EventHandler};
-use serenity::model::channel::Message;
-use serenity::model::gateway::Ready;
-use serenity::framework::standard::{
-    StandardFramework,
-    CommandResult,
-    macros::{
-        command,
-        group
+use serenity::{
+    async_trait,
+    client::{
+        Client,
+        Context,
+        EventHandler,
+    },
+    model::{
+        channel::Message,
+        gateway::Ready,
+    },
+    framework::standard::{
+        StandardFramework,
+        CommandResult,
+        macros::{
+            command,
+            group,
+        }
     }
 };
 
